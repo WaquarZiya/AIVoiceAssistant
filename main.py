@@ -1,4 +1,4 @@
-import os                           # pip install [all the modules used]
+import os                           # ~pip install <module_name> in your Terminal
 import pyttsx3
 import speech_recognition as sr
 import webbrowser
@@ -7,7 +7,7 @@ import datetime
 import requests
 
 
-api__key ="8662c312871a1ba435b98d9d9e8bd0b1"
+api__key ="8662c312871a1ba435b98d9d9e8bd0b1"               # replace with your own API key, mine have might expired now
 city = "Bangalore"
 base_url = "https://api.openweathermap.org/data/2.5/weather"
 params = {
@@ -49,7 +49,7 @@ def takeCommand():
 
 # function to store the response against user's query
 def ai(prompt):
-   openai.api_key = "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"
+   openai.api_key = "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"               # replace with your own API key, mine have might expired now
    text = f"OpenAI response for user Command :\n{prompt} \n***********************************************************************\n\n"
 
 
@@ -75,7 +75,7 @@ def ai(prompt):
 chatStr = ""
 # function to respond or chat with user
 def chat(query):
-   openai.api_key = "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"
+   openai.api_key = "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"                  # replace with your own API key, mine have might expired now
 
 
    global chatStr
@@ -144,22 +144,12 @@ if __name__ == '__main__':
            webbrowser.open("https://www.netflix.com/in/")
 
 
-       elif "open rvitm website" in query.lower():
-           say("opening r v t i m website")
-           webbrowser.open("https://www.rvitm.edu.in/")
-
-
        elif "open spotify" in query.lower():
            say("opening spotify")
            webbrowser.open("https://open.spotify.com/")
 
 
        # playing music
-       elif "national anthem" in query:
-           musicPath = "jana-gana.mp3"
-           os.system(f'start "" "{musicPath}"')
-
-
        elif "shape of you" in query.lower():
            say("opening song")
            webbrowser.open("https://youtu.be/VwomfkFDvH4?si=6p-9xaK74-GKPlDn")
@@ -207,6 +197,7 @@ if __name__ == '__main__':
 
 
        # opening applications
+       # these path are my system specific, use your own System's path otherwise it won't work
        elif "open vs code" in query.lower():
            say("opening vs code")
            vs_code_path = r"C:\Users\Asus\AppData\Local\Programs\Microsoft VS Code\Code.exe"
@@ -223,12 +214,7 @@ if __name__ == '__main__':
            say("opening firefox")
            ff_path = r"C:\Program Files\Mozilla Firefox\firefox.exe"
            os.system(f'start "" "{ff_path}"')
-
-
-       elif "open android studio" in query.lower():
-           say("opening android studio")
-           as_path = r"C:\Program Files\Android\Android Studio\bin\studio64.exe"
-           os.system(f'start "" "{as_path}"')
+          
 
 
        elif "open microsoft edge" in query.lower():
@@ -242,12 +228,6 @@ if __name__ == '__main__':
            say("opening download folder")
            downloads = r'C:\Users\Asus\Downloads'
            os.system(f'start "" "{downloads}"')
-
-
-       elif "open rvitm folder" in query.lower():
-           say("opening r v t i m folder")
-           rvitm = r'C:\Users\Asus\OneDrive\Desktop\RVITM'
-           os.system(f'start "" "{rvitm}"')
 
 
        # terminating execution
